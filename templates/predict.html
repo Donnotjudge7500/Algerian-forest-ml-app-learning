@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <title>Forest Fire Prediction</title>
+    </head>
+    <body>
+        <h1>Forest FWI Prediction</h1>
+        <form method="POST" action="{{ url_for('predict') }}">
+            <label for="Temperature">Temperature:</label>
+            <input type="text" id="Temperature" name="Temperature" step="0.1" required><br><br>
+
+            <label for="RH">RH:</label>
+            <input type="text" id="RH" name="RH" step="0.1" required><br><br>
+
+            <label for="Ws">Ws:</label>
+            <input type="text" id="Ws" name="Ws" step="0.1" required><br><br>
+
+            <label for="Rain">Rain:</label>
+            <input type="text" id="Rain" name="Rain" step="0.1" required><br><br>
+
+            <label for="FFMC">FFMC:</label>
+            <input type="text" id="FFMC" name="FFMC" step="0.1" required><br><br>
+
+            <label for="DMC">DMC:</label>
+            <input type="text" id="DMC" name="DMC" step="0.1" required><br><br>
+
+            <label for="ISI">ISI:</label>
+            <input type="text" id="ISI" name="ISI" step="0.1" required><br><br>
+
+            <label for="Classes">Classes:</label>
+            <select id="Classes" name="Classes" required>
+                <option value="">Select a class</option>
+                <option value="0"> Class 0</option>
+                <option value="1"> Class 1</option>
+                <!-- Add more options as needed -->
+            </select><br><br>
+
+            <label for="Region">Region:</label>
+            <select id="Region" name="Region" required>
+                <option value="">Select a region</option>
+                <option value="0"> Region 0</option>
+                <option value="1"> Region 1</option>
+                <!-- Add more options as needed -->
+            </select><br><br>
+
+        <input type="submit" value="Predict">
+        </form>
+
+        <h2>Prediction Result</h2>
+        <p>The predicted FWI value is: {{ prediction_text }}</p>
+    </body>
+</html>
